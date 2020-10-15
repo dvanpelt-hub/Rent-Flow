@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rental Property Cash-Flow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <section>
+            <h1>Rent Flow</h1>
+            <p>Brief description of the app and its purpose</p>
+        </section>
+
+    <br>
+
+        <form class="rent-form">
+            <h2>Get Rent Estimates and Comps</h2>
+            <label for="zipcode-search">Please enter the property's zipcode:</label>
+            <input type="text" name="zip" class="js-find-zip" required>
+            <input type="submit" value="search" class="search-zip-btn">
+        </form>
+
+        <section id="rent-results" class="hidden"></section>
+    </div>
+
+    <br>
+
+    <div>
+        <form class="cash-flow-form">
+        <section class="calculator">
+            <h2>Cash Flow Estimator</h2>
+            
+            <div>
+                <h3>Monthly Rent</h3>
+                <label for="monthly-rent">Enter monthly rent amount:</label>
+                <input type="number" name="rent" class="js-monthly-rent">
+            </div>
+
+            <section class="expenses">
+                <div>
+                    <h3>Monthly Expenses</h3>
+                    <label for="monthly-mortgage">Mortgage Payment:</label>
+                    <input type="number" name="mortgage" class="js-mortgage">
+                </div>
+
+                <div>
+                    <label for="monthly-insurance">Insurance</label>
+                    <input type="number" name="rent" class="js-monthly-rent">
+                </div>
+
+                <div>
+                    <label for="property-taxes">Property Taxes</label>
+                    <input type="number" name="taxes" class="js-monthly-taxes">
+                </div>
+
+                <div>
+                    <label for="monthly-hoa">HOA fees</label>
+                    <input type="number" name="hoa" class="js-monthly-hoa">
+                </div>
+            </section>
+
+            <section class="alt-costs">
+                <div>
+                    <h3>Additional Costs</h3>
+                    <label for="vacancy-rate">Vacancy Rate:</label>
+                    <input type="text" name="vacancy" class="js-vacancy">
+                </div>
+
+                <div>
+                    <label for="capital-expenditure">Capital Expenditure:</label>
+                    <input type="number" name="cap-ex" class="js-cap-ex">
+                </div>
+
+                <div>
+                    <label for="repair-savings">Savings for repairs:</label>
+                    <input type="number" name="repairs" class="js-saving-repairs">
+                </div>
+            </section>
+
+            <input type="submit" value="Calculate" class="cash-flow-btn">
+            <section id="cashflow-results" class="hidden"></section>
+
+        </section>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
