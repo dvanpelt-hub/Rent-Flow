@@ -50,3 +50,9 @@ body {
     margin: 3rem;
 }
 
+#rent-results {
+    padding: 10rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
