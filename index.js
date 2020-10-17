@@ -16,9 +16,10 @@ function displayCompData(responseJson, compCount) {
         $('#rent-results').append(`
         <div>
             <ul>
-                <li class="result-item">${responseJson.listings[i].address}</li>
-                <li class="result-item">${responseJson.rentRangeLow}</li>
-                <li class="result-item">${responseJson.rentRangeHigh}</li>
+                <li class="result-item">Address: ${responseJson.listings[i].formattedAddress}</li>
+                <li class="result-item">Rent Price: ${responseJson.listings[i].price}</li>
+                <li class="result-item">Rent low-end: ${responseJson.rentRangeLow}</li>
+                <li class="result-item">Rent high-end: ${responseJson.rentRangeHigh}</li>
             </ul>
         </div>`);
         console.log('test')   
