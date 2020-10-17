@@ -19,14 +19,43 @@
 
         <form class="rent-form">
             <h2>Get Rent Estimates and Comps</h2>
-            <label for="zipcode-search">Please enter the property's zipcode:</label>
-            <input type="text" name="zip" class="js-find-zip" required>
-            <input type="submit" value="search" class="search-zip-btn">
+
+            <div class="search-criteria">
+                <label for="address">Please enter the property's address:</label>
+                <input type="text" name="address" class="js-address" required>
+            </div>
+
+            <div class="comp-Count">
+                <label for="compCount">How many comparisons would you like?</label>
+                <input type="number" name="compCount" class="js-compCount" value="10" required>
+            </div>
+
+            <div class="sq-foot">
+                <label for="sq-foot">Square Footage:</label>
+                <input type="number" name="sq-foot" class="js-square-foot" value="1500" required>
+            </div>
+
+            <div class="bedrooms">
+                <label for="bedrooms">Bedrooms:</label>
+                <input type="number" name="bedrooms" class="js-bedrooms" value="3" required>
+            </div>
+
+            <div class="bathrooms">
+                <label for="sq-foot">Bathrooms:</label>
+                <input type="number" name="bathrooms" class="js-bathrooms" value="2" required>
+            </div>
+
+            <div class="propertyType">
+                <label for="propertyType">Property Type (Must be one of the following: Apartment, Single Family, Townhouse, Condo, Duplex-Triplex):</label>
+                <input type="text" name="propertyType" class="js-propertyType" value="Single Family" required>
+            </div>
+
+                <input type="submit" value="search" class="rental-search-btn">
         </form>
 
         <section id="rent-results" class="hidden"></section>
     </div>
-
+<!--
     <br>
 
     <div>
@@ -87,6 +116,7 @@
         </section>
         </form>
     </div>
+    -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
