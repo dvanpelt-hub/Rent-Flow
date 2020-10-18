@@ -1,6 +1,7 @@
 'use strict';
 
 function formatQueryParams(params) {
+//Responsible for formatting the params object for the request
   const queryItems = Object.keys(params).map
     (key => `${[encodeURIComponent(key)]}=${encodeURIComponent(params[key])}`);
   return queryItems.join('&');
@@ -8,25 +9,36 @@ function formatQueryParams(params) {
 
 function displayCompData(responseJson, compCount) {
     //Responsible for displaying the results to the DOM
-    console.log(responseJson);
-
     $('#rent-results').empty();
 
     for (let i = 0; i < compCount; i++) {
-        $('#rent-results').append(`
+    $('#rent-results').append(`
         <div>
             <ul>
                 <li class="result-item">Address: ${responseJson.listings[i].formattedAddress}</li>
                 <li class="result-item">Rent Price: ${responseJson.listings[i].price}</li>
-                <li class="result-item">Rent low-end: ${responseJson.rentRangeLow}</li>
-                <li class="result-item">Rent high-end: ${responseJson.rentRangeHigh}</li>
             </ul>
         </div>`);
-        console.log('test')   
     }
+    $('#rent-results').append(`
+    <div>
+        <ul>
+            <li class="result-item">Rent low-end: ${responseJson.rentRangeLow}</li>
+            <br>
+            <li class="result-item">Rent high-end: ${responseJson.rentRangeHigh}</li>
+        </ul>
+    </div>`)
     $("#rent-results").removeClass("hidden");
 }
 
+function averageRent(responseJson) {
+    //Responsible for displaying the average rent to the DOM
+    /*let averagePrice = 0;
+    for (let i = 0; i < compCount; i++) {
+        averagePrice += responseJson.listings[i].price;
+        console.log(averagePrice);*/
+        console.log(responseJson);
+}
 
 function handleRentalSearch(baseURL, comps, sqFoot, bath, rentalAddress, bed, type) {
     //Handles the construction of request with parameters and makes the fetch call
@@ -44,6 +56,7 @@ function handleRentalSearch(baseURL, comps, sqFoot, bath, rentalAddress, bed, ty
     const url = baseURL + '?' + queryItems;
     console.log(url);
     fetch(url, {
+    //Call with fetch
         "method": "GET",
 	    "headers": {
 		"x-rapidapi-host": "realty-mole-property-api.p.rapidapi.com",
@@ -56,8 +69,13 @@ function handleRentalSearch(baseURL, comps, sqFoot, bath, rentalAddress, bed, ty
             return response.json();
         }
         throw new Error(response.statusText);
+    }) 
+    .then(responseJson => {
+        displayCompData(responseJson, comps)
     })
-    .then(responseJson => displayCompData(responseJson, comps))
+    .then(responseJson => {
+        averageRent(responseJson)
+    })
     .catch(err => {
         $('#js-error-message').text(`Sorry, something went wrong. Try again: ${err.message}`)
     console.log('Rental Search ran successfully')
