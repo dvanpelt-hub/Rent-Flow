@@ -31,13 +31,23 @@ function displayCompData(responseJson, compCount) {
     $("#rent-results").removeClass("hidden");
 }
 
-function averageRent(responseJson) {
+function averageRent(responseJson, compCount) {
     //Responsible for displaying the average rent to the DOM
-    /*let averagePrice = 0;
+    let combinedPrice = 0;
     for (let i = 0; i < compCount; i++) {
-        averagePrice += responseJson.listings[i].price;
-        console.log(averagePrice);*/
-        console.log(responseJson);
+        combinedPrice += responseJson.listings[i].price;
+    }
+    let rawPrice = (combinedPrice / compCount);
+    const averagedPrice = rawPrice.toFixed(2);
+    //Rounds the decimal to the hundredth
+    console.log(averagedPrice);
+    $('#average-price').append(`
+    <div>
+        <ul>
+            <li class="result-item">Average Price: ${averagedPrice}</li>
+        </ul>
+    </div>
+    `)
 }
 
 function handleRentalSearch(baseURL, comps, sqFoot, bath, rentalAddress, bed, type) {
@@ -71,10 +81,14 @@ function handleRentalSearch(baseURL, comps, sqFoot, bath, rentalAddress, bed, ty
         throw new Error(response.statusText);
     }) 
     .then(responseJson => {
-        displayCompData(responseJson, comps)
+    //Handles averaging the rent for each property in the responseJson
+        averageRent(responseJson, comps);
+    //Returns another responseJson object to be used in displayCompData
+        return responseJson;
     })
     .then(responseJson => {
-        averageRent(responseJson)
+    //Handles displaying the responseJson data in the DOM once called
+        displayCompData(responseJson, comps)
     })
     .catch(err => {
         $('#js-error-message').text(`Sorry, something went wrong. Try again: ${err.message}`)
