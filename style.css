@@ -5,13 +5,17 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: rgb(204, 221, 184);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(204, 221, 184);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+p {
+    max-width: 600px;
 }
 
 .cash-flow-btn {
@@ -28,21 +32,21 @@ body {
     margin: .5rem;
 }
 
-.search-criteria, .sq-foot, .bedrooms, .bathrooms {
+.search-criteria, .sq-foot, .bedrooms, .bathrooms, .expenses, .insurance, .taxes, .hoa, .vacancy, .cap-ex, .repairs, .prop-management {
     padding: 1rem;
     display: flex;
     flex-direction: column;
 }
 
-.rent-form {
+.rent-form, .cash-flow-form {
     width: 350px;
-    height: 450px;
+    height: 400px;
     margin: auto;
     position: relative;
 }
 
-.js-compCount, .sq-foot, .bedrooms, .bathrooms {
-    width: 110px;
+.js-compCount, .sq-foot, .bedrooms, .bathrooms, .expenses, .insurance, .taxes, .hoa, .vacancy, .cap-ex, .repairs, .property-management {
+    width: 150px;
     margin: auto;
 }
 

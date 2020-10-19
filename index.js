@@ -1,5 +1,8 @@
 'use strict';
 
+/////////////////////// RENTAL COMPS RETRIEVER ///////////////////////////
+
+
 function formatQueryParams(params) {
 //Responsible for formatting the params object for the request
   const queryItems = Object.keys(params).map
@@ -23,22 +26,23 @@ function displayCompData(responseJson, compCount) {
     $('#rent-results').append(`
     <div>
         <ul>
-            <li class="result-item">Rent low-end: ${responseJson.rentRangeLow}</li>
+            <li class="result-item">Average low-end: ${responseJson.rentRangeLow}</li>
             <br>
-            <li class="result-item">Rent high-end: ${responseJson.rentRangeHigh}</li>
+            <li class="result-item">Average high-end: ${responseJson.rentRangeHigh}</li>
         </ul>
     </div>`)
     $("#rent-results").removeClass("hidden");
 }
 
 function averageRent(responseJson, compCount) {
+    $('#average-price').empty();
     //Responsible for displaying the average rent to the DOM
     let combinedPrice = 0;
     for (let i = 0; i < compCount; i++) {
         combinedPrice += responseJson.listings[i].price;
     }
     let rawPrice = (combinedPrice / compCount);
-    const averagedPrice = rawPrice.toFixed(2);
+    const averagedPrice = rawPrice.toFixed(0);
     //Rounds the decimal to the hundredth
     console.log(averagedPrice);
     $('#average-price').append(`
@@ -120,3 +124,69 @@ function mainSearch() {
 }
 
 $(mainSearch);
+
+
+/////////////////////// CASH-FLOW CALCULATOR ///////////////////////////
+
+
+function calculateTotalExpenses(mortgage, insurance, taxes, hoa, vacancy, capEx, repairs, propManFees) {
+    //Totals amount for expenses
+    const rent = parseInt($(".js-monthly-rent").val());
+    console.log("Monthly Income: " + rent);
+
+    const totalExpenses = (mortgage+insurance+taxes+hoa);
+    console.log("Total expenses calculated: " + totalExpenses);
+
+    const totalAddCosts = (vacancy+capEx+repairs+propManFees);
+    console.log("Total additional costs calculated: " + totalAddCosts);
+
+    calculateCashFlow(totalExpenses, totalAddCosts, rent)
+}
+
+function calculateCashFlow(totalExpenses, totalAddCosts, rent) {
+    //Calculates cash-flow for monthly rental
+    const firstRemainder = (rent-totalExpenses);
+    console.log(firstRemainder);
+
+    const secondRemainder = (firstRemainder*totalAddCosts);
+    console.log(secondRemainder.toFixed(2));
+
+    const cashFlow = (firstRemainder - secondRemainder);
+    console.log("Monthly Cash-Flow: " + cashFlow)
+
+    displayCashFlow(cashFlow);
+}
+
+function displayCashFlow(cashFlow) {
+    //Responsible for displaying the results to the DOM
+    $('#cashflow-results').empty();
+
+    $('#cashflow-results').append(`
+        <div>
+            <ul>
+                <li class="result-item">Monthly Cash-Flow: ${cashFlow}</li>
+            </ul>
+        </div>`);
+    $('#cashflow-results').removeClass('hidden');
+}
+
+function handleCriteria() {
+    //Input bank for calculation
+    $(".cash-flow-form").submit(event => {
+        event.preventDefault();
+        $(".cashflow-results").empty();
+
+        const mortgage = parseInt($(".js-mortgage").val());
+        const insurance = parseInt($(".js-insurance").val());
+        const taxes = parseInt($(".js-taxes").val());
+        const hoa = parseInt($(".js-hoa").val());
+        const vacancy = parseFloat($(".js-vacancy").val());
+        const capEx = parseFloat($(".js-cap-ex").val());
+        const repairs = parseFloat($(".js-savings-repairs").val());
+        const propManFees = parseFloat($(".js-property-management").val());
+
+        calculateTotalExpenses(mortgage, insurance, taxes, hoa, vacancy, capEx, repairs, propManFees);
+    })
+}
+
+$(handleCriteria);
