@@ -19,7 +19,12 @@ function displayCompData(responseJson, compCount) {
         <div>
             <ul>
                 <li class="result-item">Address: ${responseJson.listings[i].formattedAddress}</li>
-                <li class="result-item">Rent Price: ${responseJson.listings[i].price}</li>
+                <li class="result-item">Bedrooms: ${responseJson.listings[i].bedrooms}</li>
+                <li class="result-item">Bathrooms: ${responseJson.listings[i].bathrooms}</li>
+                <li class="result-item">Square Footage: ${responseJson.listings[i].squareFootage}</li>
+                <li class="result-item">Rent Price: ${responseJson.listings[i].price}
+                </li>
+                
             </ul>
         </div>`);
     }
