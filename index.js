@@ -16,15 +16,24 @@ function displayCompData(responseJson, compCount) {
 
     for (let i = 0; i < compCount; i++) {
     $('#rent-results').append(`
-        <div>
+        <div class="result-item">
             <ul>
-                <li class="result-item">Address: ${responseJson.listings[i].formattedAddress}</li>
-                <li class="result-item">Bedrooms: ${responseJson.listings[i].bedrooms}</li>
-                <li class="result-item">Bathrooms: ${responseJson.listings[i].bathrooms}</li>
-                <li class="result-item">Square Footage: ${responseJson.listings[i].squareFootage}</li>
-                <li class="result-item">Rent Price: ${responseJson.listings[i].price}
-                </li>
-                
+            <div class="result-item">
+                <li class="result-item-address">Address: ${responseJson.listings[i].formattedAddress}</li>
+            </div>
+            <div class="result-item">
+                <li class="result-item-bed">Bedrooms: ${responseJson.listings[i].bedrooms}</li>
+            </div>
+            <div class="result-item">
+                <li class="result-item-bath">Bathrooms: ${responseJson.listings[i].bathrooms}</li>
+            </div>
+            <div class="result-item">
+                <li class="result-item-sq">Square Footage: ${responseJson.listings[i].squareFootage}</li>
+            </div>
+            <div class="result-item">
+                <li class="result-item-rent">Rent Price: ${responseJson.listings[i].price}</li>
+            </div>
+            
             </ul>
         </div>`);
     }
@@ -157,7 +166,7 @@ function calculateCashFlow(totalExpenses, totalAddCosts, rent) {
     console.log(secondRemainder.toFixed(2));
 
     const cashFlow = (firstRemainder - secondRemainder);
-    console.log("Monthly Cash-Flow: " + cashFlow)
+    console.log("Estimated Monthly Cash-Flow: " + cashFlow)
 
     displayCashFlow(cashFlow);
 }

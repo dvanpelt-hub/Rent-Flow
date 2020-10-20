@@ -1,66 +1,175 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Lobster&family=PT+Sans+Caption&display=swap');
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: rgb(204, 221, 184);
+}
+
+header {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin: auto;
+    width: 93%;
+    height: 10vh;
     align-items: center;
-    text-align: center;
 }
 
-p {
-    max-width: 600px;
-}
-
-.cash-flow-btn {
-    font-family: 'Montserrat', sans-serif;
-    background-color: rgb(254, 255, 253);
-    padding: 1rem;
-    margin: .5rem;
-}
-
-.search-address-btn {
-    font-family: 'Montserrat', sans-serif;
-    background-color: rgb(255, 255, 255);
-    padding: 1rem;
-    margin: .5rem;
-}
-
-.search-criteria, .sq-foot, .bedrooms, .bathrooms, .expenses, .insurance, .taxes, .hoa, .vacancy, .cap-ex, .repairs, .prop-management {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-}
-
-.rent-form, .cash-flow-form {
-    width: 350px;
-    height: 400px;
-    margin: auto;
-    position: relative;
-}
-
-.js-compCount, .sq-foot, .bedrooms, .bathrooms, .expenses, .insurance, .taxes, .hoa, .vacancy, .cap-ex, .repairs, .property-management {
-    width: 150px;
-    margin: auto;
-}
-
-.rental-search-btn {
-    margin: 3rem;
-}
-
-#rent-results {
-    padding: 10rem;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+nav {
+    flex: .4;
 }
 
 li {
-    list-style-type: none;
+    list-style: none;
+    margin: 10px;
+}
+
+.result-item ul {
+    border: rgb(141, 185, 70);
+    border-style: solid;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 3%;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: rgb(61, 61, 61);
+    padding: 1rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    justify-content: space-between;
+}
+
+.logo, .nav-links {
+    display: flex;
+}
+
+.logo {
+    font-weight: 400;
+    margin: 5px;
+    flex: 1;
+}
+
+.intro {
+    display: flex;
+    background-image: url(home.jpg);
+    height: 900px;
+    flex-flow: column wrap;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 10rem;
+    font-family: "PT Sans Caption", "Montserrat", sans-serif;
+}
+
+.intro-description {
+    color: white;
+    width: 25%;
+    font-size: 60px;
+    text-align: center;
+}
+
+.compCriteria {
+    display: flex;
+    height: 800px;
+    flex-flow: column wrap;
+}
+
+.inputCriteria {
+    justify-items: flex-start;
+    padding: 5rem;
+    font-family: "PT Sans Caption", "Montserrat", sans-serif;
+}
+
+.inputCriteria h2, .cash-flow-calc h2 {
+    font-size: 55px;
+    padding: 2rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.rent-form {
+    width: 800px;
+}
+
+.results {
+    display: flex;
+    height: 900px;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    flex: 1;
+    text-align: left;
+    border: gray;
+    padding-right: 3rem;
+    font-family: "PT Sans Caption", "Montserrat", sans-serif;
+}
+
+.input-fields {
+    padding: 10px;
+    flex: 1;
+}
+
+.baseAddress, .comp-Count, .sq-foot, .bedrooms, .bathrooms, .propertyType {
+    padding: 10px;
+    font-size: 20px;
+}
+
+.results li {
+    margin: 20px;
+}
+
+.results .results-item {
+    margin: 10px;
+}
+
+.cash-flow-calc {
+    display: flex;
+    height: 600px;
+    flex-flow: row wrap;
+    font-family: "PT Sans Caption", "Montserrat", sans-serif;
+}
+
+.input-calc {
+    display: flex;
+    padding: 10px;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem;
+}
+
+.monthly-rent, .expenses, .insurance, .taxes, .hoa, .vacancy, .cap-ex, .repairs, .property-management {
+    padding: 10px;
+    font-size: 20px;
+}
+
+#cashflow-results {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    align-content: center;
+    color: rgb(112, 156, 53);
+    text-align: center;
+    font-size: 50px;
+    flex: 1;
+}
+
+.cash-flow-btn {
+    margin-bottom: 100px;
+    margin-top: 100px;
+    margin-left: 300px;
+}
+
+.monthly-rent h3, .expenses h3, .vacancy h3 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
