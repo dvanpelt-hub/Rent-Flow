@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Lobster&family=PT+Sans+Caption&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Lobster&family=PT+Sans+Caption&family=Poppins:ital,wght@1,600&display=swap');
 
 * {
   margin: 0;
@@ -16,6 +16,7 @@ header {
     width: 93%;
     height: 10vh;
     align-items: center;
+    font-family: "Poppins", sans-serif;
 }
 
 nav {
@@ -25,6 +26,11 @@ nav {
 li {
     list-style: none;
     margin: 10px;
+}
+
+h1 {
+    font-size: 50px;
+    text-decoration: underline;
 }
 
 .result-item ul {
@@ -91,8 +97,10 @@ li {
 
 .inputCriteria h2, .cash-flow-calc h2 {
     font-size: 55px;
-    padding: 2rem;
+    color: white;
+    padding: 1rem;
     font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to right, #303341, #868686);
 }
 
 .rent-form {
@@ -152,6 +160,25 @@ li {
     font-size: 20px;
 }
 
+.cash-flow-btn, .rental-search-btn {
+    background-color:#adadad;
+	border-radius:28px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #757575;
+}
+
+.monthly-rent h3, .expenses h3, .vacancy h3 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
 #cashflow-results {
     display: flex;
     flex-flow: column wrap;
@@ -161,15 +188,4 @@ li {
     text-align: center;
     font-size: 50px;
     flex: 1;
-}
-
-.cash-flow-btn {
-    margin-bottom: 100px;
-    margin-top: 100px;
-    margin-left: 300px;
-}
-
-.monthly-rent h3, .expenses h3, .vacancy h3 {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
 }
