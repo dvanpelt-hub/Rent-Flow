@@ -1,4 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Lobster&family=PT+Sans+Caption&family=Poppins:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,900;1,900&family=Montserrat:ital@1&family=Lobster&family=PT+Sans+Caption&family=Poppins:ital,wght@1,600&family=Bebas+Neue&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap');
+
+/*///////////////////////////////FADE IN/////////////////////////////*/
+
+.fade-in {
+    animation: fadeIn ease 6s;
+    -webkit-animation: fadeIn ease 6s;
+    -moz-animation: fadeIn ease 6s;
+    -o-animation: fadeIn ease 6s;
+    -ms-animation: fadeIn ease 6s;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+}}
+
+/* BASIC STRUCTURE STYLE */
 
 * {
   margin: 0;
@@ -31,12 +89,23 @@ li {
 h1 {
     font-size: 50px;
     text-decoration: underline;
+    color: rgb(202, 22, 22);
+    text-shadow: 2px 2px rgb(75, 75, 75);
+    font-family: "Poppins";
 }
 
 .result-item ul {
-    border: rgb(141, 185, 70);
-    border-style: solid;
-    padding: 5px;
+    border: rgb(202, 202, 202);
+    border-style: dashed;
+    padding: 3px;
+    margin-top: 10px;
+    border-radius: 3%;
+}
+
+.result-item-av {
+    border: rgb(202, 202, 202);
+    border-style: dashed;
+    padding: 8px;
     margin-top: 10px;
     border-radius: 3%;
 }
@@ -78,15 +147,18 @@ h1 {
 
 .intro-description {
     color: white;
-    width: 25%;
-    font-size: 60px;
+    width: 28%;
+    font-size: 80px;
+    font-weight: bolder;
     text-align: center;
+    font-family: "Open Sans Condensed", sans-serif;
 }
 
 .compCriteria {
     display: flex;
-    height: 800px;
-    flex-flow: column wrap;
+    height: 1000px;
+    flex-flow: row wrap;
+    background-color: rgb(255, 255, 255);
 }
 
 .inputCriteria {
@@ -105,11 +177,13 @@ h1 {
 
 .rent-form {
     width: 800px;
+    background-color: rgb(247, 247, 247);
+    border-radius: 5px;
 }
 
 .results {
     display: flex;
-    height: 900px;
+    height: 1000px;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
@@ -119,6 +193,10 @@ h1 {
     border: gray;
     padding-right: 3rem;
     font-family: "PT Sans Caption", "Montserrat", sans-serif;
+}
+
+.cash-flow-form {
+    background-color: rgb(247, 247, 247);
 }
 
 .input-fields {
@@ -141,18 +219,11 @@ h1 {
 
 .cash-flow-calc {
     display: flex;
-    height: 600px;
-    flex-flow: row wrap;
-    font-family: "PT Sans Caption", "Montserrat", sans-serif;
-}
-
-.input-calc {
-    display: flex;
-    padding: 10px;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
     padding: 5rem;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    background-color: rgb(255, 255, 255);
+    font-family: "PT Sans Caption", "Montserrat", sans-serif;
 }
 
 .monthly-rent, .expenses, .insurance, .taxes, .hoa, .vacancy, .cap-ex, .repairs, .property-management {
@@ -180,12 +251,13 @@ h1 {
 }
 
 #cashflow-results {
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    align-content: center;
-    color: rgb(112, 156, 53);
+    color: rgb(97, 97, 97);
     text-align: center;
     font-size: 50px;
-    flex: 1;
+    margin-top: 25rem;
+    margin-right: 17rem;
+}
+
+#average-price {
+    font-size: 25px;
 }

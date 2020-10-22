@@ -1,8 +1,5 @@
 'use strict';
 
-/////////////////////// RENTAL COMPS RETRIEVER ///////////////////////////
-
-
 function formatQueryParams(params) {
 //Responsible for formatting the params object for the request
   const queryItems = Object.keys(params).map
@@ -38,7 +35,7 @@ function displayCompData(responseJson, compCount) {
         </div>`);
     }
     $('#rent-results').append(`
-    <div>
+    <div class="result-item">
         <ul>
             <li class="result-item">Average low-end: ${responseJson.rentRangeLow}</li>
             <br>
@@ -60,9 +57,9 @@ function averageRent(responseJson, compCount) {
     //Rounds the decimal to the hundredth
     console.log(averagedPrice);
     $('#average-price').append(`
-    <div>
+    <div class="result-item-av">
         <ul>
-            <li class="result-item">Average Price: ${averagedPrice}</li>
+            <li class="result-item">Average Price: $${averagedPrice}</li>
         </ul>
     </div>
     `)
@@ -178,7 +175,7 @@ function displayCashFlow(cashFlow) {
     $('#cashflow-results').append(`
         <div>
             <ul>
-                <li class="result-item">Monthly Cash-Flow: ${cashFlow}</li>
+                <li class="result-item">Monthly Cash-Flow: $${cashFlow}</li>
             </ul>
         </div>`);
     $('#cashflow-results').removeClass('hidden');
@@ -188,7 +185,7 @@ function handleCriteria() {
     //Input bank for calculation
     $(".cash-flow-form").submit(event => {
         event.preventDefault();
-        $(".cashflow-results").empty();
+        $("#cashflow-results").empty();
 
         const mortgage = parseInt($(".js-mortgage").val());
         const insurance = parseInt($(".js-insurance").val());
