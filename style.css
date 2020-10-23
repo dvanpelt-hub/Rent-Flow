@@ -58,13 +58,98 @@
 
 /* MOBILE FIRST */
 
-.content {
-    background-image: white;
+h1 {
+    font-size: 30px;
+    text-decoration: underline;
+    color: rgb(202, 22, 22);
+    text-shadow: 2px 2px rgb(75, 75, 75);
+    font-family: "Poppins";
 }
 
-@media all and (min-width: 600px) {
-    .content {
+.intro {
+    display: flex;
+    height: 900px;
+    flex-flow: column wrap;
+    background-color: gray;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    justify-content: center;
+    align-items: center;
+    padding: none;
+    font-family: "PT Sans Caption", "Montserrat", sans-serif;
+}
+
+.intro-description {
+    color: rgb(255, 255, 255);
+    width: auto;
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: center;
+    font-family: "Open Sans Condensed", sans-serif;
+}
+
+.results {
+    height: 1000px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    border: gray;
+    width: auto;
+    padding-right: 3rem;
+    font-family: "PT Sans Caption", "Montserrat", sans-serif;
+}
+
+.compCriteria {
+    display: flex;
+    height: 2000px;
+    align-items: left;
+    flex-flow: row wrap;
+    background-color: rgb(255, 255, 255);
+}
+
+.inputCriteria {
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+    width: auto;
+    font-family: "PT Sans Caption", "Montserrat", sans-serif;
+}
+
+.rent-form {
+    justify-content: auto;
+    justify-items: center;
+    width: auto;
+    background-color: rgb(247, 247, 247);
+    border-radius: 5px;
+}
+
+@media all and (min-width: 1800px) { /*DESKTOP*/
+    .intro {
         background-image: url(home.jpg);
+        align-items: flex-end;
+        padding-right: 5rem;
+    }
+    .intro-description {
+        font-size: 80px;
+        color: rgb(255, 255, 255);
+        width: 40%;
+    }
+    h1 {
+        font-size: 50px;
+    }
+    .results {
+        height: 300px;
+    }
+    .compCriteria {
+        height: 800px;
+        align-items: center;
+        flex-flow: column wrap;
+        width: auto;
+        padding: 0rem;
     }
 }
 
@@ -96,14 +181,6 @@ nav {
 li {
     list-style: none;
     margin: 10px;
-}
-
-h1 {
-    font-size: 50px;
-    text-decoration: underline;
-    color: rgb(202, 22, 22);
-    text-shadow: 2px 2px rgb(75, 75, 75);
-    font-family: "Poppins";
 }
 
 .result-item ul {
@@ -143,36 +220,6 @@ h1 {
     flex: 1;
 }
 
-.intro {
-    display: flex;
-    /*background-image: url(home.jpg);*/
-    height: 900px;
-    flex-flow: column wrap;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    justify-content: center;
-    align-items: flex-end;
-    padding-right: 10rem;
-    font-family: "PT Sans Caption", "Montserrat", sans-serif;
-}
-
-.intro-description {
-    color: white;
-    width: 28%;
-    font-size: 80px;
-    font-weight: bolder;
-    text-align: center;
-    font-family: "Open Sans Condensed", sans-serif;
-}
-
-.compCriteria {
-    display: flex;
-    height: 1000px;
-    flex-flow: row wrap;
-    background-color: rgb(255, 255, 255);
-}
-
 .inputCriteria {
     justify-items: flex-start;
     padding: 5rem;
@@ -185,26 +232,6 @@ h1 {
     padding: 1rem;
     font-family: 'Montserrat', sans-serif;
     background: linear-gradient(to right, #303341, #868686);
-}
-
-.rent-form {
-    width: 800px;
-    background-color: rgb(247, 247, 247);
-    border-radius: 5px;
-}
-
-.results {
-    display: flex;
-    height: 1000px;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    color: rgb(0, 0, 0);
-    flex: 1;
-    text-align: left;
-    border: gray;
-    padding-right: 3rem;
-    font-family: "PT Sans Caption", "Montserrat", sans-serif;
 }
 
 .cash-flow-form {
