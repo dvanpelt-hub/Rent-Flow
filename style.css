@@ -56,6 +56,18 @@
       opacity:1;
 }}
 
+/* MOBILE FIRST */
+
+.content {
+    background-image: white;
+}
+
+@media all and (min-width: 600px) {
+    .content {
+        background-image: url(home.jpg);
+    }
+}
+
 /* BASIC STRUCTURE STYLE */
 
 * {
@@ -133,7 +145,7 @@ h1 {
 
 .intro {
     display: flex;
-    background-image: url(home.jpg);
+    /*background-image: url(home.jpg);*/
     height: 900px;
     flex-flow: column wrap;
     background-position: center;

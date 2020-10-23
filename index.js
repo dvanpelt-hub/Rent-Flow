@@ -99,11 +99,8 @@ function handleRentalSearch(baseURL, comps, sqFoot, bath, rentalAddress, bed, ty
     //Handles averaging the rent for each property in the responseJson
         averageRent(responseJson, comps);
     //Returns another responseJson object to be used in displayCompData
+        displayCompData(responseJson, comps);
         return responseJson;
-    })
-    .then(responseJson => {
-    //Handles displaying the responseJson data in the DOM once called
-        displayCompData(responseJson, comps)
     })
     .catch(err => {
         $('#js-error-message').text(`Sorry, something went wrong. Try again: ${err.message}`)
