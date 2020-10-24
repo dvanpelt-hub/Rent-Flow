@@ -58,103 +58,6 @@
 
 /* MOBILE FIRST */
 
-h1 {
-    font-size: 30px;
-    text-decoration: underline;
-    color: rgb(202, 22, 22);
-    text-shadow: 2px 2px rgb(75, 75, 75);
-    font-family: "Poppins";
-}
-
-.intro {
-    display: flex;
-    height: 900px;
-    flex-flow: column wrap;
-    background-color: gray;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: auto;
-    justify-content: center;
-    align-items: center;
-    padding: none;
-    font-family: "PT Sans Caption", "Montserrat", sans-serif;
-}
-
-.intro-description {
-    color: rgb(255, 255, 255);
-    width: auto;
-    font-size: 50px;
-    font-weight: bolder;
-    text-align: center;
-    font-family: "Open Sans Condensed", sans-serif;
-}
-
-.results {
-    height: 1000px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    border: gray;
-    width: auto;
-    padding-right: 3rem;
-    font-family: "PT Sans Caption", "Montserrat", sans-serif;
-}
-
-.compCriteria {
-    display: flex;
-    height: 2000px;
-    align-items: left;
-    flex-flow: row wrap;
-    background-color: rgb(255, 255, 255);
-}
-
-.inputCriteria {
-    justify-items: center;
-    justify-content: center;
-    align-items: center;
-    padding: 5rem;
-    width: auto;
-    font-family: "PT Sans Caption", "Montserrat", sans-serif;
-}
-
-.rent-form {
-    justify-content: auto;
-    justify-items: center;
-    width: auto;
-    background-color: rgb(247, 247, 247);
-    border-radius: 5px;
-}
-
-@media all and (min-width: 1800px) { /*DESKTOP*/
-    .intro {
-        background-image: url(home.jpg);
-        align-items: flex-end;
-        padding-right: 5rem;
-    }
-    .intro-description {
-        font-size: 80px;
-        color: rgb(255, 255, 255);
-        width: 40%;
-    }
-    h1 {
-        font-size: 50px;
-    }
-    .results {
-        height: 300px;
-    }
-    .compCriteria {
-        height: 800px;
-        align-items: center;
-        flex-flow: column wrap;
-        width: auto;
-        padding: 0rem;
-    }
-}
-
-/* BASIC STRUCTURE STYLE */
-
 * {
   margin: 0;
   padding: 0;
@@ -167,108 +70,173 @@ body {
 
 header {
     display: flex;
-    margin: auto;
-    width: 93%;
-    height: 10vh;
-    align-items: center;
+    justify-content: space-between;
+    height: 8vh;
     font-family: "Poppins", sans-serif;
 }
 
-nav {
-    flex: .4;
+.rent-form p {
+    font-family: "PT Sans Caption", "Montserrat", sans-serif;
+    padding: 20px 10px 0px 10px;
+    font-style: italic;
 }
 
-li {
-    list-style: none;
-    margin: 10px;
+.cash-flow-form p {
+    font-family: "PT Sans Caption", "Montserrat", sans-serif;
+    padding: 20px 10px 0px 10px;
+    font-style: italic;
 }
 
-.result-item ul {
-    border: rgb(202, 202, 202);
-    border-style: dashed;
-    padding: 3px;
-    margin-top: 10px;
-    border-radius: 3%;
-}
-
-.result-item-av {
-    border: rgb(202, 202, 202);
-    border-style: dashed;
-    padding: 8px;
-    margin-top: 10px;
-    border-radius: 3%;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: rgb(61, 61, 61);
-    padding: 1rem;
-    font-weight: bold;
-}
-
-.nav-links {
-    justify-content: space-between;
-}
-
-.logo, .nav-links {
-    display: flex;
-}
+/* //////////////////////////////////////////////////////////////////////////// */
 
 .logo {
-    font-weight: 400;
-    margin: 5px;
-    flex: 1;
+    display: flex;
+    align-items: center;
 }
 
-.inputCriteria {
-    justify-items: flex-start;
-    padding: 5rem;
+.logo h1 {
+    font-size: 22px;
+    text-decoration: underline;
+    color: rgb(202, 22, 22);
+    text-shadow: 1px 1px rgb(10, 10, 10);
+    align-items: center;
+    margin-left: 25px;
+}
+
+/* //////////////////////////////////////////////////////////////////////////// */
+
+nav {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    text-align: center;
+    margin-right: 25px;
+}
+
+.nav-links, .nav-link {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    list-style: none;
+    text-decoration: none;
+    color: rgb(61, 61, 61);
+    font-weight: bold;
+    margin-right: 15px;
+    text-align: center;
+}
+
+/* //////////////////////////////////////////////////////////////////////////// */
+
+.intro {
+    display: flex;
+    height: 200px;
+    flex-direction: column;
+    background-image: url(home.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: flex-end;
     font-family: "PT Sans Caption", "Montserrat", sans-serif;
 }
 
-.inputCriteria h2, .cash-flow-calc h2 {
-    font-size: 55px;
-    color: white;
-    padding: 1rem;
-    font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(to right, #303341, #868686);
+.intro-description {
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    padding-right: 20px;
+    margin-right: 25px;
+    font-weight: bolder;
+    text-align: center;
+    font-family: "Open Sans Condensed", sans-serif;
 }
 
-.cash-flow-form {
-    background-color: rgb(247, 247, 247);
+/* //////////////////////////////////////////////////////////////////////////// */
+
+.compCriteria {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-flow: row wrap;
 }
 
-.input-fields {
-    padding: 10px;
-    flex: 1;
-}
-
-.baseAddress, .comp-Count, .sq-foot, .bedrooms, .bathrooms, .propertyType {
-    padding: 10px;
-    font-size: 20px;
-}
-
-.results li {
-    margin: 20px;
-}
-
-.results .results-item {
-    margin: 10px;
+.compCriteria, .cash-flow-calc {
+    background-color: rgb(189, 189, 189);
 }
 
 .cash-flow-calc {
     display: flex;
-    padding: 5rem;
-    justify-content: space-between;
-    flex-flow: row wrap;
-    background-color: rgb(255, 255, 255);
+    width: auto;
+    flex-direction: column;
+}
+
+.inputCriteria, .calcCriteria {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 3rem;
     font-family: "PT Sans Caption", "Montserrat", sans-serif;
 }
 
-.monthly-rent, .expenses, .insurance, .taxes, .hoa, .vacancy, .cap-ex, .repairs, .property-management {
-    padding: 10px;
-    font-size: 20px;
+.input-fields {
+    text-align: left;
+    font-size: 14px;
+    padding-top: 20px;
 }
+
+.rent-form, .cash-flow-form {
+    justify-content: auto;
+    justify-items: center;
+    width: auto;
+    background-color: rgb(236, 236, 236);
+    border-radius: 5px;
+}
+
+/* //////////////////////////////////////////////////////////////////////////// */
+
+#comps-gen {
+    padding-top: 10px;
+    text-decoration: underline;
+}
+
+.baseAddress, .comp-Count, .sq-foot, .bedrooms, .bathrooms, .propertyType, .monthly-rent, .expenses, .insurance, .taxes, .hoa, .vacancy, .cap-ex, .repairs, .property-management {
+    font-family: "PT Sans Caption", "Montserrat", sans-serif;
+    padding: 20px 10px 0px 10px;
+}
+
+.js-compCount, .js-square-foot, .js-bedrooms, .js-bathrooms, .js-monthly-rent, .js-mortgage, .js-expenses, .js-insurance, .js-taxes, .js-hoa, .js-vacancy, .js-cap-ex, .js-savings-repairs, .js-property-management {
+    width: 50px;
+    text-align: center;
+    display: flex;
+} 
+
+.js-address {
+    width: 150px;
+}
+
+.js-propertyType {
+    width: 110px;
+}
+
+.js-compCount, .js-square-foot, .js-bedrooms, .js-bathrooms, .js-address, .js-propertyType, .js-monthly-rent, .js-mortgage, .js-expenses, .js-insurance, .js-taxes, .js-hoa, .js-vacancy, .js-cap-ex, .js-savings-repairs, .js-property-management {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-width: 0;
+}
+
+.expenses h3, .monthly-rent h3, .vacancy h3 {
+    text-align: left;
+    padding: 30px 0px;
+    text-decoration: underline;
+}
+
+#flow-calc {
+    text-decoration: underline;
+    padding: 20px;
+}
+
+.vacancy p {
+    margin: 20px 5px;
+}
+/* //////////////////////////////////////////////////////////////////////////// */
 
 .cash-flow-btn, .rental-search-btn {
     background-color:#adadad;
@@ -278,25 +246,108 @@ li {
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:17px;
-	padding:16px 31px;
-	text-decoration:none;
+	font-size:15px;
+	padding:10px 10px;
+    text-decoration:none;
+    margin: 20px 0px;
 	text-shadow:0px 1px 0px #757575;
 }
 
-.monthly-rent h3, .expenses h3, .vacancy h3 {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-}
+/* //////////////////////////////////////////////////////////////////////////// */
 
-#cashflow-results {
-    color: rgb(97, 97, 97);
+.results {
+    display: flex;
+    flex-flow: column wrap;
+    height: auto;
+    color: rgb(0, 0, 0);
     text-align: center;
-    font-size: 50px;
-    margin-top: 25rem;
-    margin-right: 17rem;
+    font-family: "PT Sans Caption", "Montserrat", sans-serif;
+    font-size: 15px;
 }
 
-#average-price {
-    font-size: 25px;
+.result-list, .cashflow-results-list{
+    height: auto;
+    padding: 30px 10px;
+    background-color:rgb(231, 231, 231);
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.result-item {
+    list-style: none;
+}
+
+#average-price, #cashflow-results {
+    background-color: green;
+    border-radius: 5px;
+}
+
+/* //////////////////////////////////////////////////////////////////////////// */
+
+@media all and (min-width: 450px) {
+    .intro {
+        height: 300px;
+    }
+    .intro-description {
+        font-size: 23px;
+    }
+}
+
+@media all and (min-width: 600px) {
+    nav {
+        font-size: 15px;
+    }
+    .logo h1 {
+        font-size: 30px;
+    }
+    .intro {
+    height: 400px;
+    }
+    .intro-description {
+        font-size: 28px;
+    }
+    #rent-results {
+        flex-direction: row;
+        align-items: center;
+    }
+    #cashflow-results {
+        width: auto;
+        margin: 10px 200px;
+    }
+}
+
+@media all and (min-width: 900px) { 
+    nav {
+        font-size: 18px;
+    }
+    .logo h1 {
+        font-size: 40px;
+    }
+    .intro {
+    height: 600px;
+    }
+    .intro-description {
+        font-size: 40px;
+    }
+    .cash-flow-form {
+    margin: 0 100px;
+}
+}
+
+@media all and (min-width: 1200px) { 
+    nav {
+        font-size: 19px;
+    }
+    .logo h1 {
+        font-size: 50px;
+    }
+    .intro {
+    height: 830px;
+    }
+    .intro-description {
+        font-size: 60px;
+    }
+    .cash-flow-form {
+    margin: 0 200px;
+}
 }

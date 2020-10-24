@@ -13,7 +13,7 @@ function displayCompData(responseJson, compCount) {
 
     for (let i = 0; i < compCount; i++) {
     $('#rent-results').append(`
-        <div class="result-item">
+        <div class="result-list">
             <ul>
             <div class="result-item">
                 <li class="result-item-address">Address: ${responseJson.listings[i].formattedAddress}</li>
@@ -28,18 +28,18 @@ function displayCompData(responseJson, compCount) {
                 <li class="result-item-sq">Square Footage: ${responseJson.listings[i].squareFootage}</li>
             </div>
             <div class="result-item">
-                <li class="result-item-rent">Rent Price: ${responseJson.listings[i].price}</li>
+                <li class="result-item-rent">Rent Price: $${responseJson.listings[i].price}</li>
             </div>
             
             </ul>
         </div>`);
     }
     $('#rent-results').append(`
-    <div class="result-item">
+    <div class="result-list">
         <ul>
-            <li class="result-item">Average low-end: ${responseJson.rentRangeLow}</li>
+            <li class="result-item">Average low-end: $${responseJson.rentRangeLow}</li>
             <br>
-            <li class="result-item">Average high-end: ${responseJson.rentRangeHigh}</li>
+            <li class="result-item">Average high-end: $${responseJson.rentRangeHigh}</li>
         </ul>
     </div>`)
     $("#rent-results").removeClass("hidden");
@@ -57,7 +57,7 @@ function averageRent(responseJson, compCount) {
     //Rounds the decimal to the hundredth
     console.log(averagedPrice);
     $('#average-price').append(`
-    <div class="result-item-av">
+    <div class="result-list">
         <ul>
             <li class="result-item">Average Price: $${averagedPrice}</li>
         </ul>
@@ -170,7 +170,7 @@ function displayCashFlow(cashFlow) {
     $('#cashflow-results').empty();
 
     $('#cashflow-results').append(`
-        <div>
+        <div class="cashflow-results-list">
             <ul>
                 <li class="result-item">Monthly Cash-Flow: $${cashFlow}</li>
             </ul>

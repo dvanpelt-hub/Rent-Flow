@@ -38,6 +38,7 @@
             <div class="inputCriteria">
                 <form class="rent-form">
                     <h2 id="comps-gen">Comps Generator</h2>
+                    <p>Enter an address and corresponding details in the provided formats to find rental comps</p>
 
                     <div class="input-fields">
                         <div class="baseAddress">
@@ -68,7 +69,7 @@
                         <div class="propertyType">
                             <label for="propertyType">Property Type (Must be one of the following: Apartment, Single Family, Townhouse,
                                 Condo, Duplex-Triplex):</label>
-                            <input type="text" name="propertyType" class="js-propertyType" value="Single Family" required>
+                            <input type="text" name="propertyType" class="js-propertyType" required>
                         </div>
                     </div>
                     <div class="comp-btn">
@@ -76,7 +77,6 @@
                     </div>
                 </form>
             </div>
-            
         
             <div class="results">
                 <div id="rent-results" class="hidden"></div>
@@ -85,47 +85,50 @@
         </section>
         
         <section class="cash-flow-calc">
+            <div class="calcCriteria">
             <form class="cash-flow-form">
                 <h2 id="flow-calc">Cash Flow Estimator</h2>
+                <p>Enter monthly income and expenses details for a monthly cash flow estimate on your rental property</p>
+                <div class="input-fields">
                     <div class="monthly-rent">
                         <h3>Monthly Rent</h3>
                         <label for="monthly-rent">Enter monthly rent amount:</label>
                         <input type="number" name="rent" class="js-monthly-rent" value="1200" required>
                     </div>
-                
+                    
                     <div class="expenses">
                         <h3>Monthly Expenses</h3>
                         <label for="monthly-mortgage">Mortgage Payment:</label>
                         <input type="number" name="mortgage" class="js-mortgage" value="600">
                     </div>
-                
+                    
                     <div class="insurance">
-                        <label for="monthly-insurance">Insurance</label>
+                        <label for="monthly-insurance">Insurance:</label>
                         <input type="number" name="insurance" class="js-insurance" value="100">
                     </div>
-                
+                    
                     <div class="taxes">
-                        <label for="property-taxes">Property Taxes</label>
+                        <label for="property-taxes">Property Taxes:</label>
                         <input type="number" name="taxes" class="js-taxes" value="120">
                     </div>
-                
+                    
                     <div class="hoa">
-                        <label for="monthly-hoa">HOA fees</label>
+                        <label for="monthly-hoa">HOA fees:</label>
                         <input type="number" name="hoa" class="js-hoa" value="0">
                     </div>
-                
+                    
                     <div class="vacancy">
                         <h3>Additional Costs</h3>
                         <p>Enter as a decimal (ex: 8% = 0.08)</p>
                         <label for="vacancy-rate">Vacancy Rate:</label>
                         <input type="text" name="vacancy" class="js-vacancy" value="0">
                     </div>
-                
+                    
                     <div class="cap-ex">
                         <label for="capital-expenditure">Capital Expenditure:</label>
                         <input type="text" name="cap-ex" class="js-cap-ex" value="0">
                     </div>
-                
+                    
                     <div class="repairs">
                         <label for="repair-savings">Savings for repairs:</label>
                         <input type="text" name="repairs" class="js-savings-repairs" value="0">
@@ -134,10 +137,14 @@
                         <label for="prop-management">Property Management Fees:</label>
                         <input type="text" name="property-management" class="js-property-management" value="0">
                     </div>
-
-                    <input type="submit" value="Calculate" class="cash-flow-btn">
+                </div>
+                <input type="submit" value="Calculate" class="cash-flow-btn">
+                    
             </form>
-                <div id="cashflow-results" class="hidden"></div>
+            </div>
+                <div class="results">
+                    <div id="cashflow-results" class="hidden"></div>
+                </div>
         </section>
     </main>
 
