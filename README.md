@@ -12,6 +12,3 @@ jQuery
 API - rapidAPI/realtymole
 # Screenshots
 <a href="mobilefirst.jpg">Mobile First</a>
-=======
-
->>>>>>> 03ac04b72c35c972d2eaea58bf5c406b897133d4
