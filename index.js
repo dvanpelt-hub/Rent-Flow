@@ -1,18 +1,18 @@
-'use strict';
+"use strict";
 
 function formatQueryParams(params) {
 //Responsible for formatting the params object for the request
   const queryItems = Object.keys(params).map
     (key => `${[encodeURIComponent(key)]}=${encodeURIComponent(params[key])}`);
-  return queryItems.join('&');
+  return queryItems.join("&");
 }
 
 function displayCompData(responseJson, compCount) {
     //Responsible for displaying the results to the DOM
-    $('#rent-results').empty();
+    $("#rent-results").empty();
 
     for (let i = 0; i < compCount; i++) {
-    $('#rent-results').append(`
+    $("#rent-results").append(`
         <div class="result-list">
             <ul>
             <div class="result-item">
@@ -34,7 +34,7 @@ function displayCompData(responseJson, compCount) {
             </ul>
         </div>`);
     }
-    $('#rent-results').append(`
+    $("#rent-results").append(`
     <div class="result-list">
         <ul>
             <li class="result-item">Average low-end: $${responseJson.rentRangeLow}</li>
@@ -46,7 +46,7 @@ function displayCompData(responseJson, compCount) {
 }
 
 function averageRent(responseJson, compCount) {
-    $('#average-price').empty();
+    $("#average-price").empty();
     //Responsible for displaying the average rent to the DOM
     let combinedPrice = 0;
     for (let i = 0; i < compCount; i++) {
@@ -56,7 +56,7 @@ function averageRent(responseJson, compCount) {
     const averagedPrice = rawPrice.toFixed(0);
     //Rounds the decimal to the hundredth
     console.log(averagedPrice);
-    $('#average-price').append(`
+    $("#average-price").append(`
     <div class="result-list">
         <ul>
             <li class="result-item">Average Price: $${averagedPrice}</li>
@@ -78,7 +78,7 @@ function handleRentalSearch(baseURL, comps, sqFoot, bath, rentalAddress, bed, ty
     console.log(params);
 
     const queryItems = formatQueryParams(params);
-    const url = baseURL + '?' + queryItems;
+    const url = baseURL + "?" + queryItems;
     console.log(url);
     fetch(url, {
     //Call with fetch
@@ -90,7 +90,7 @@ function handleRentalSearch(baseURL, comps, sqFoot, bath, rentalAddress, bed, ty
     .then(response => {
         console.log(response);
         if (response.ok) {
-            console.log('Response successful')
+            console.log("Response successful")
             return response.json();
         }
         throw new Error(response.statusText);
@@ -103,8 +103,8 @@ function handleRentalSearch(baseURL, comps, sqFoot, bath, rentalAddress, bed, ty
         return responseJson;
     })
     .catch(err => {
-        $('#js-error-message').text(`Sorry, something went wrong. Try again: ${err.message}`)
-    console.log('Rental Search ran successfully')
+        $("#js-error-message").text(`Sorry, something went wrong. Try again: ${err.message}`)
+    console.log("Rental Search ran successfully")
     })
 }
 
@@ -118,16 +118,16 @@ function mainSearch() {
         const apiKey = "f31f4c4ae7msh19ad0c55e44bda2p1efe8ajsn5d61ef1eec85";
         const baseURL = "https://rapidapi.p.rapidapi.com/rentalPrice";
         //Endpoints for rental property search criteria
-        const comps = $('.js-compCount').val();
-        const sqFoot = $('.js-square-foot').val();
-        const bath = $('.js-bathrooms').val();
-        const rentalAddress = $('.js-address').val();
-        const bed = $('.js-bedrooms').val();
-        const type = $('.js-propertyType').val();
+        const comps = $(".js-compCount").val();
+        const sqFoot = $(".js-square-foot").val();
+        const bath = $(".js-bathrooms").val();
+        const rentalAddress = $(".js-address").val();
+        const bed = $(".js-bedrooms").val();
+        const type = $(".js-propertyType").val();
         //Uses these as arguments for the handleRentalSearch function
         handleRentalSearch(baseURL, comps, sqFoot, bath, rentalAddress, bed, type, apiKey);
         //Check mainSearch function has ran
-        console.log('Main Ran')
+        console.log("Main Ran")
     });
 }
 
@@ -167,15 +167,15 @@ function calculateCashFlow(totalExpenses, totalAddCosts, rent) {
 
 function displayCashFlow(cashFlow) {
     //Responsible for displaying the results to the DOM
-    $('#cashflow-results').empty();
+    $("#cashflow-results").empty();
 
-    $('#cashflow-results').append(`
+    $("#cashflow-results").append(`
         <div class="cashflow-results-list">
             <ul>
                 <li class="result-item">Monthly Cash-Flow: $${cashFlow}</li>
             </ul>
         </div>`);
-    $('#cashflow-results').removeClass('hidden');
+    $("#cashflow-results").removeClass("hidden");
 }
 
 function handleCriteria() {
