@@ -27,7 +27,7 @@ API - rapidAPI/realtymole
 
 ![Image of Mobile First screenshot 4](screenshots/mobilefirst4.jpg)
 
-# Desktop view
+## Desktop view
 
 ![Image of Desktop view 1](screenshots/desktop.jpg)
 
