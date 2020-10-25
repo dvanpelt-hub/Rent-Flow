@@ -8,7 +8,6 @@ HTML
 CSS
 JavaScript
 jQuery
-<<<<<<< HEAD
 API - rapidAPI/realtymole
 # Screenshots
 
