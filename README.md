@@ -5,10 +5,16 @@ Rent-flow provides users the ability to search for rental property comps in rela
 https://dvanpelt-hub.github.io/Rent-Flow/
 # Technology
 HTML
+<br>
 CSS
+<br>
 JavaScript
+<br>
 jQuery
+<br>
 API - rapidAPI/realtymole
+<br>
+
 # Screenshots
 
 # Mobile First layout
