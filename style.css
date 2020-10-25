@@ -160,7 +160,7 @@ nav {
 }
 
 .compCriteria, .cash-flow-calc {
-    background-color: rgb(189, 189, 189);
+    background-color: rgb(223, 223, 223);
 }
 
 .cash-flow-calc {
@@ -277,6 +277,22 @@ nav {
     list-style: none;
 }
 
+.description {
+    justify-content: auto;
+    justify-items: center;
+    width: auto;
+    font-size: 15px;
+    background-color: rgb(236, 236, 236);
+    border-radius: 5px;
+    padding: 25px;
+    margin: 10px 10px 30px 10px;
+    color: rgb(70, 70, 70);
+    font-weight: bolder;
+    text-align: center;
+    font-style: italic;
+    font-family: "Open Sans Condensed", sans-serif
+}
+
 #average-price, #cashflow-results {
     background-color: green;
     border-radius: 5px;
@@ -314,6 +330,10 @@ nav {
         width: auto;
         margin: 10px 200px;
     }
+    .description {
+        margin: 50px 50px 100px 50px;
+        font-size: 20px;
+    }
 }
 
 @media all and (min-width: 900px) { 
@@ -331,7 +351,10 @@ nav {
     }
     .cash-flow-form {
     margin: 0 100px;
-}
+    }
+    .description {
+        font-size: 23px;
+    }
 }
 
 @media all and (min-width: 1200px) { 
@@ -349,5 +372,8 @@ nav {
     }
     .cash-flow-form {
     margin: 0 200px;
+    }
+    .description {
+        font-size: 29px;
     }
 }
