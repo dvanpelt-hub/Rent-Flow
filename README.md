@@ -17,7 +17,7 @@ API - rapidAPI/realtymole
 
 # Screenshots
 
-# Mobile First layout
+## Mobile First layout
 
 ![Image of Mobile First screenshot 1](screenshots/mobilefirst.jpg)
 
