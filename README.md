@@ -11,4 +11,17 @@ jQuery
 <<<<<<< HEAD
 API - rapidAPI/realtymole
 # Screenshots
-![Image of Mobile First screenshot](screenshots/mobilefirst.jpg)
+Mobile First layout
+![Image of Mobile First screenshot 1](screenshots/mobilefirst.jpg)
+
+![Image of Mobile First screenshot 2](screenshots/mobilefirst2.jpg)
+
+![Image of Mobile First screenshot 3](screenshots/mobilefirst3.jpg)
+
+![Image of Mobile First screenshot 4](screenshots/mobilefirst4.jpg)
+Desktop view
+![Image of Desktop view 1](screenshots/desktop.jpg)
+
+![Image of Desktop view 2](screenshots/desktop2.jpg)
+
+![Image of Desktop view 3](screenshots/desktop3.jpg)
