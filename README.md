@@ -11,4 +11,4 @@ jQuery
 <<<<<<< HEAD
 API - rapidAPI/realtymole
 # Screenshots
-<a href="mobilefirst.jpg">Mobile First</a>
+![Image of Mobile First screenshot](screenshots/mobilefirst.jpg)
