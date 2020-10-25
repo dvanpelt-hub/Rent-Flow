@@ -6,5 +6,8 @@ https://dvanpelt-hub.github.io/Rent-Flow/
 # Technology
 HTML
 CSS
-JS
+JavaScript
 jQuery
+API - rapidAPI/realtymole
+# Screenshots
+<a href="mobilefirst.jpg">Mobile First</a>
