@@ -90,21 +90,19 @@ function handleRentalSearch(baseURL, comps, sqFoot, bath, rentalAddress, bed, ty
     .then(response => {
         console.log(response);
         if (response.ok) {
-            console.log("Response successful")
             return response.json();
         }
         throw new Error(response.statusText);
-    }) 
+    })
     .then(responseJson => {
-    //Handles averaging the rent for each property in the responseJson
-        averageRent(responseJson, comps);
+            //Handles averaging the rent for each property in the responseJson
+            averageRent(responseJson, comps);
     //Returns another responseJson object to be used in displayCompData
-        displayCompData(responseJson, comps);
-        return responseJson;
+            displayCompData(responseJson, comps);
+            return responseJson;
     })
     .catch(err => {
         $("#js-error-message").text(`Sorry, something went wrong. Try again: ${err.message}`)
-    console.log("Rental Search ran successfully")
     })
 }
 
