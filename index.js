@@ -85,7 +85,7 @@ function handleRentalSearch(baseURL, comps, sqFoot, bath, rentalAddress, bed, ty
         "method": "GET",
 	    "headers": {
 		"x-rapidapi-host": "realty-mole-property-api.p.rapidapi.com",
-		"x-rapidapi-key": "f31f4c4ae7msh19ad0c55e44bda2p1efe8ajsn5d61ef1eec85"
+		"x-rapidapi-key": ""
     }})
     .then(response => {
         console.log(response);
