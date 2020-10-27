@@ -113,7 +113,7 @@ function mainSearch() {
         event.preventDefault();
         $(".rent-results").empty();
         //API key and base URL for request call
-        const apiKey = "f31f4c4ae7msh19ad0c55e44bda2p1efe8ajsn5d61ef1eec85";
+        const apiKey = "";
         const baseURL = "https://rapidapi.p.rapidapi.com/rentalPrice";
         //Endpoints for rental property search criteria
         const comps = $(".js-compCount").val();
